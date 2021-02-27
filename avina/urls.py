@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('djoser.urls')),
     url(r'^auth/', include('djoser.urls.jwt')),
+    url(r'categories/', include("categories.urls"), name="categories"),
 ]

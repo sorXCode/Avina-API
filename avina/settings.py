@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'djoser',
     'cuser',
     'users',
+    'categories',
 ]
 
 MIDDLEWARE = [
