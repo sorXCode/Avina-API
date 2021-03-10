@@ -4,15 +4,8 @@ from .serializers import CategorySerializer
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
+from avina.utils import PermissionMixin
 
-class PermissionMixin:
-    def get_permissions(self):
-        try:
-            # return permission_classes depending on `action` 
-            return [permission() for permission in self.permission_classes_by_action[self.action]]
-        except KeyError: 
-            # action is not set return default permission_classes
-            return [permission() for permission in self.permission_classes]
 
 class CategoryList(PermissionMixin, ModelViewSet):
     queryset = Category.objects.all()

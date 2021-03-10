@@ -13,4 +13,3 @@ class Product(models.Model):
     description = models.TextField()
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(AUTH_USER_MODEL, on_delete=RESTRICT, related_name="products")
-
