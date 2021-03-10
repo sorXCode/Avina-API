@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'', include('djoser.urls')),
     url(r'^auth/', include('djoser.urls.jwt')),
     url(r'categories/', include("categories.urls"), name="categories"),
+    url(r'products/', include("products.urls"), name="products"),
 ]
