@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import Product
 from categories.models import Category
 from users.models import User
-from djoser.utils import settings
 from rest_framework import serializers
 
 class ProductSerializer(serializers.ModelSerializer):

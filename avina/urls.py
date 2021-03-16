@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^auth/', include('djoser.urls.jwt')),
     url(r'categories/', include("categories.urls"), name="categories"),
     url(r'products/', include("products.urls"), name="products"),
+    url(r'messages/', include("messenger.urls"), name="messenger"),
 ]

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'categories',
     'products',
+    'messenger',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +111,7 @@ REST_FRAMEWORK = {
 
 JWT_AUTH = {
     # how long the original token is valid for
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=20),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=360),
 
     # allow refreshing of tokens
     'JWT_ALLOW_REFRESH': True,
