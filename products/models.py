@@ -22,3 +22,7 @@ class Product(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(
         AUTH_USER_MODEL, on_delete=RESTRICT, related_name="products")
+    sold = models.BooleanField(default=False)
+
+    def __repr__(self):
+        return "Product:\t{}\nDescription:\t{}\nStatus:\t{}".format(self.name, self.description, self.status)

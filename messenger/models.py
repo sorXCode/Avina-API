@@ -8,3 +8,10 @@ class Message(models.Model):
     messages = ArrayField(models.JSONField())
     parties = ArrayField(models.IntegerField(), size=2)
 
+    @classmethod
+    def get_user_messages(cls, user_id):
+        msgs  = cls.objects.filter(parties__contains=[user_id,]).all()
+        return msgs
+
+    def __repr__(self):
+        return "product:\t{}\nmessages:\t{}\nparties:\t{}".format(self.product, self.messages, self.parties)

@@ -46,3 +46,9 @@ class InitializeMessageSerializer(serializers.ModelSerializer):
             return message
         return super().save(**kwargs)
 
+
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        exclude  = ("id",)
