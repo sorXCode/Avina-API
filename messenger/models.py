@@ -12,6 +12,11 @@ class Message(models.Model):
     def get_user_messages(cls, user_id):
         msgs  = cls.objects.filter(parties__contains=[user_id,]).all()
         return msgs
+    
+    @classmethod
+    def get_user_messages_for_product(cls, user_id, product_uid):
+        msgs = cls.objects.filter(parties__contains=[user_id,], product__uid=product_uid).first()
+        return msgs
 
     def __repr__(self):
         return "product:\t{}\nmessages:\t{}\nparties:\t{}".format(self.product, self.messages, self.parties)

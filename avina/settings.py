@@ -96,11 +96,16 @@ DATABASES = {
 AUTH_USER_MODEL = "users.User"
 
 DJOSER = {
+    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '#/activate/{uid}/{token}',
     'HIDE_USERS': True,
-    "USER_CREATE_PASSWORD_RETYPE": True,
+    'USER_CREATE_PASSWORD_RETYPE': True,
     'SERIALIZERS': {
             'user_create_password_retype': 'users.serializers.CustomUserCreatePasswordRetypeSerializer',
     },
+    'SEND_ACTIVATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': True,
 }
 
 REST_FRAMEWORK = {
@@ -108,6 +113,13 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+
+SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]
+
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+DEFAULT_FROM_EMAIL = os.environ["SENDGRID_EMAIL_SENDER"]
 
 JWT_AUTH = {
     # how long the original token is valid for

@@ -13,3 +13,10 @@ class User(AbstractCUser):
         from messenger.models import Message
         messages = Message.get_user_messages(user_id=self.id)
         return messages
+    
+    def get_messages_for_product(self, product_uid):
+        from messenger.models import Message
+        messages = Message.get_user_messages_for_product(user_id=self.id, product_uid=product_uid)
+        return messages
+
+

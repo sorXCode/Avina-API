@@ -51,4 +51,6 @@ class InitializeMessageSerializer(serializers.ModelSerializer):
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
-        exclude  = ("id",)
+        exclude  = ("id", "parties",)
+    
+    
