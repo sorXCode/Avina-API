@@ -5,3 +5,4 @@ venv
 *sqlite*
 migrations
 uploads/
+target/pylist.json
