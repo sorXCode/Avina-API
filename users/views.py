@@ -10,4 +10,4 @@ class UserActivationView(APIView):
         post_data = {'uid': uid, 'token': token}
         result = requests.post(post_url, data = post_data)
         content = result.text
-        return Response(content)
+        return Response(content, status=result.status_code)

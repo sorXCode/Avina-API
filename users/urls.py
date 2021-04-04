@@ -3,5 +3,5 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    url(r'^activate/(?P<uid>[\w-]+)/(?P<token>[\w-]+)/$', UserActivationView.as_view()),
+    url(r'^users/activate/(?P<uid>[\w-]+)/(?P<token>[\w-]+)/$', UserActivationView.as_view()),
 ]
