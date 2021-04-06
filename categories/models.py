@@ -1,9 +1,9 @@
 from django.db import models
-from avina.storage import select_storage
+# from avina.storage import select_storage
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    photo = models.ImageField(storage=select_storage("/categories"))
+    photo = models.ImageField(upload_to="categories")
 
     def __repr__(self):
         return self.name
