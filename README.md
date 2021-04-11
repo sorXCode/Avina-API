@@ -37,3 +37,7 @@ To run application for the first time, perform database migration using the comm
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
+
+### Endpoints
+
+All available endpoints are documented and published [here](https://documenter.getpostman.com/view/11647149/TWDdiDAF)
