@@ -9,3 +9,4 @@ sendgrid==6.6.0
 boto3==1.17.44
 django-storages==1.11.1
 django-sendgrid-v5==0.9.1
+django-currentuser==0.5.3

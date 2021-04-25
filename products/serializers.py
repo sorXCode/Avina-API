@@ -7,6 +7,7 @@ from rest_framework import serializers
 class ProductSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(read_only=False, queryset=Category.objects.all(), slug_field="name")
     added_by = serializers.PrimaryKeyRelatedField(read_only=False, queryset=User.objects.all(), default=serializers.CurrentUserDefault())
+    tags = serializers.ListField(read_only=True)
 
     class Meta:
         model = Product
